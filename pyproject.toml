@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "latexformat"
+version = "0.1.0"
+authors = [
+    { name = "Anton Rodomanov", email = "anton.rodomanov@gmail.com" },
+]
+description = "Wrapper around latexindent with a convenient CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+latexformat = "latexformat.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/arodomanov/preliminary-latex-format"
+"Bug Tracker" = "https://github.com/arodomanov/preliminary-latex-format/issues"
