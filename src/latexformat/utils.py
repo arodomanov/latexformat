@@ -21,10 +21,6 @@ def is_empty_generator(generator: typing.Generator) -> bool:
     return next(generator, dummy) is dummy
 
 
-def is_empty_directory(directory: Path) -> bool:
-    return is_empty_generator(directory.iterdir())
-
-
 def files_have_same_contents(file: Path, base_file: Path) -> bool:
     return filecmp.cmp(str(file), str(base_file))
 
