@@ -103,14 +103,13 @@ def parse_arguments():
         "source file(s)",
     )
 
-    default_only_different = True
     parser.add_argument(
         "--only_different",
-        default=default_only_different,
         action="store_true",
-        help="save each formatted file in the `OUTPUT` directory only if the "
-        "resulting file is different from the original, "
-        f"defaults to {default_only_different}",
+        help="if this flag is activated, save each formatted file to the "
+        "corresponding location under the `OUTPUT` directory only if the "
+        "resulting file is different from the original; "
+        "this flag takes effect only when `OUTPUT` is a directory",
     )
 
     parser.add_argument(

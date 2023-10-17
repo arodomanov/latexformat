@@ -18,16 +18,16 @@ pip3 install https://github.com/arodomanov/latexformat/tarball/master
 # Command-line interface
 
 ```shell
-usage: latexformat [-h] [-p PATTERN] [-o OUTPUT] [--only_different]
-                    [-s SETTINGS_FILE]
-                    source
+usage: latexformat [-h] [--version] [-p PATTERN] [-o OUTPUT]
+                   [--only_different] [-s SETTINGS_FILE]
+                   source
 
 This program is a wrapper around `latexindent`, that provides a convenient CLI
 for formatting latex source files.
 
 positional arguments:
-  source                latex source file or directory containing latex
-                        source files to be formatted
+  source                latex source file or directory containing latex source
+                        files to be formatted
 
 options:
   -h, --help            show this help message and exit
@@ -37,14 +37,16 @@ options:
                         `source` directory) to be formatted, defaults to
                         "**/*.tex"
   -o OUTPUT, --output OUTPUT
-                        path specifying either a file (if `source` is a
-                        file), or a directory (if `source` is a directory)
-                        where you wish to save the formatted file(s); if not
-                        specified, the formatted file(s) will overwrite the
-                        original source file(s)
-  --only_different      save each formatted file in the `OUTPUT` directory
-                        only if the resulting file is different from the
-                        original, defaults to True
+                        path specifying either a file (if `source` is a file),
+                        or a directory (if `source` is a directory) where you
+                        wish to save the formatted file(s); if not specified,
+                        the formatted file(s) will overwrite the original
+                        source file(s)
+  --only_different      if this flag is activated, save each formatted file to
+                        the corresponding location under the `OUTPUT`
+                        directory only if the resulting file is different from
+                        the original; this flag takes effect only when
+                        `OUTPUT` is a directory
   -s SETTINGS_FILE, --settings_file SETTINGS_FILE
                         optional path to a yaml file containing settings for
                         `latexindent`; if not specified, `latexformat`
