@@ -81,7 +81,7 @@ def parse_arguments():
         "be formatted",
     )
 
-    parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
+    parser.add_argument("--version", action="version", version="%(prog)s 0.1.1")
 
     default_pattern = "**/*.tex"
     parser.add_argument(
