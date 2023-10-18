@@ -56,11 +56,15 @@ def format_file_and_override(
     run_latexindent(source_path, settings_path=settings_path)
 
 
-def format_file_and_save_to(
+def format_file_and_save_to_without_comparing(
     source_path: Path,
     output_path: Path,
+    create_parent_directories: bool = False,
     settings_path: typing.Optional[Path] = None,
 ):
+    if create_parent_directories:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
     run_latexindent(
         source_path, output_path=output_path, settings_path=settings_path
     )
@@ -86,6 +90,29 @@ def format_file_and_save_to_only_if_different(
             if create_parent_directories:
                 output_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(temporary_output_path, output_path)
+
+
+def format_file_and_save_to(
+    source_path: Path,
+    output_path: Path,
+    create_parent_directories: bool = False,
+    save_only_if_different: bool = False,
+    settings_path: typing.Optional[Path] = None,
+):
+    if save_only_if_different:
+        format_file_and_save_to_only_if_different(
+            source_path,
+            output_path,
+            create_parent_directories=create_parent_directories,
+            settings_path=settings_path,
+        )
+    else:
+        format_file_and_save_to_without_comparing(
+            source_path,
+            output_path,
+            create_parent_directories=create_parent_directories,
+            settings_path=settings_path,
+        )
 
 
 def format_files_and_override(
@@ -114,17 +141,13 @@ def format_files_and_save_to_preserving_relative_paths(
     save_directory.mkdir(exist_ok=True)
     for path in paths:
         output_path = save_directory / path.relative_to(reference_directory)
-        if save_only_if_different:
-            format_file_and_save_to_only_if_different(
-                path,
-                output_path,
-                create_parent_directories=True,
-                settings_path=settings_path,
-            )
-        else:
-            format_file_and_save_to(
-                path, output_path, settings_path=settings_path
-            )
+        format_file_and_save_to(
+            path,
+            output_path,
+            create_parent_directories=True,
+            save_only_if_different=save_only_if_different,
+            settings_path=settings_path,
+        )
 
 
 def format_files_given_by_pattern_and_save_to(
