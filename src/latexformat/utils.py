@@ -7,6 +7,7 @@ import sys
 def search_parents_for_file(
     file_name: str, directory: Path
 ) -> typing.Optional[Path]:
+    directory = directory.resolve()
     while True:
         guess = directory / file_name
         if guess.is_file():
