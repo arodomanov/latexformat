@@ -12,7 +12,15 @@ installed on your system.
 # Installation
 
 ```shell
-pip3 install https://github.com/arodomanov/latexformat/tarball/master
+pipx install https://github.com/arodomanov/latexformat/tarball/master
+```
+
+# Update
+
+If you already have `latexformat` installed but want to update it to the most
+recent version, use the following command:
+```shell
+pipx upgrade latexformat
 ```
 
 # Command-line interface
