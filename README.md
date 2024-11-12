@@ -12,7 +12,7 @@ installed on your system.
 # Installation
 
 ```shell
-pip3 install https://github.com/arodomanov/latexformat/tarball/master
+pipx install https://github.com/arodomanov/latexformat/tarball/master
 ```
 
 # Command-line interface
