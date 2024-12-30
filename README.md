@@ -12,7 +12,7 @@ installed on your system.
 # Installation
 
 ```shell
-pipx install https://github.com/arodomanov/latexformat/tarball/master
+pipx install git+https://github.com/arodomanov/latexformat.git@v0.1.3
 ```
 
 # Update
