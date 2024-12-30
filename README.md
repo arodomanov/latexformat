@@ -12,7 +12,7 @@ installed on your system.
 # Installation
 
 ```shell
-pipx install git+https://github.com/arodomanov/latexformat.git@v0.1.3
+pipx install git+https://github.com/arodomanov/latexformat.git@v0.1.4
 ```
 
 # Update
