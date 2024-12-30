@@ -27,6 +27,7 @@ def run_latexindent(
         "-g",
         path_to_null_device(),
         "-m",
+        "-r"
     ]
 
     if settings_path is None:
