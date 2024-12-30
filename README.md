@@ -11,8 +11,9 @@ installed on your system.
 
 # Installation
 
+To install the latest version of `latexformat`, use the following command:
 ```shell
-pipx install git+https://github.com/arodomanov/latexformat.git@v0.1.4
+pipx install git+https://github.com/arodomanov/latexformat.git
 ```
 
 # Update
